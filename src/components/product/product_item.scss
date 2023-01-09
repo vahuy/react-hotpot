@@ -1,0 +1,31 @@
+.light {
+  border-radius: 4px;
+  margin: 10px;
+  background-color: bisque;
+}
+.dark {
+  border-radius: 4px;
+  margin: 10px;
+  background-color: cadetblue;
+}
+.item-info {
+  text-align: left;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+.price {
+  background-color: #87deb178;
+  display: flex;
+  align-content: center;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+.price::after {
+  content: "$";
+  font-size: 12px;
+  padding-left: 4px;
+  color: green;
+}
