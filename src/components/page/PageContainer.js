@@ -2,17 +2,14 @@ import { useState } from "react";
 import BasicDropDown from "../common/DropDown";
 import ProductItem from "../product/ProductItem";
 import "./page_container.scss";
+import MONTHS from "../../js/Constants";
 
 const PageContainer = () => {
   const [pageContainerState, setPageContainerState] = useState({
-    totalMoney: 0,
+    totalMoney: -1,
     selectedIndex: -1,
   });
-  const items = [
-    { value: "Jan", key: 1 },
-    { value: "Feb", key: 2 },
-    { value: "March", key: 3 },
-  ];
+  const items = MONTHS;
   const data = [
     { month: 3, price: 12, name: "Car" },
     { month: 1, price: 1213, name: "Boat" },
@@ -42,10 +39,8 @@ const PageContainer = () => {
   const getTotalMoney = () => {
     let money = 0;
     data.forEach((item) => (money += item.price));
-    return (
-      `Total Money:${money}`
-    )
-  }
+    return `Total Money: ${money}`;
+  };
   const getDataByMonth = () => {
     const filter = data.filter(
       (item) => item.month === pageContainerState.selectedIndex
@@ -75,7 +70,11 @@ const PageContainer = () => {
             : getDataByMonth()}
         </div>
       </div>
-      <div>{ pageContainerState.totalMoney !== 0 ? `Total Money:${pageContainerState.totalMoney}` : getTotalMoney()}</div>
+      <div>
+        {pageContainerState.totalMoney >= 0
+          ? `Total Money: ${pageContainerState.totalMoney}`
+          : getTotalMoney()}
+      </div>
     </div>
   );
 };

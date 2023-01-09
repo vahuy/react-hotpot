@@ -1,5 +1,5 @@
 import Dropdown from "react-bootstrap/Dropdown";
-
+import './dropdown.scss';
 const BasicDropDown = (props) => {
   const handleOnclick = (e) => {
     const selectedItem = props.items.find(i => i.value === e.target.text)
