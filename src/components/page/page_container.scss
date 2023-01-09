@@ -1,0 +1,11 @@
+.page-container {
+  background-color: plum;
+  display: inline-block;
+  width: 600px;
+  overflow: scroll;
+  .item-list {
+    overflow: scroll;
+    max-height: 50vh;
+    min-height: 10vh;
+  }
+}
